@@ -21,8 +21,9 @@ class _BottomNavStyle15 extends StatelessWidget {
               height: height,
               color: Colors.transparent,
               padding: EdgeInsets.only(
-                  top: navBarEssentials.padding.top,
-                  bottom: navBarEssentials.padding.bottom),
+                top: 5,
+                bottom: navBarEssentials.padding.bottom,
+              ),
               child: Container(
                 alignment: Alignment.center,
                 height: height,
@@ -51,12 +52,10 @@ class _BottomNavStyle15 extends StatelessWidget {
                         if (item.title == null)
                           const SizedBox.shrink()
                         else
-                          Padding(
-                            padding: const EdgeInsets.only(top: 15),
-                            child: Material(
-                              type: MaterialType.transparency,
-                              child: FittedBox(
-                                  child: Text(
+                          Material(
+                            type: MaterialType.transparency,
+                            child: FittedBox(
+                              child: Text(
                                 item.title!,
                                 style: item.textStyle != null
                                     ? (item.textStyle!.apply(
@@ -71,7 +70,7 @@ class _BottomNavStyle15 extends StatelessWidget {
                                             : item.inactiveColorPrimary,
                                         fontWeight: FontWeight.w400,
                                         fontSize: 12),
-                              )),
+                              ),
                             ),
                           )
                       ],
@@ -87,15 +86,16 @@ class _BottomNavStyle15 extends StatelessWidget {
           ? const SizedBox.shrink()
           : Padding(
               padding: EdgeInsets.only(
-                  top: navBarEssentials.padding.top,
-                  bottom: navBarEssentials.padding.bottom),
+                top: navBarEssentials.padding.top,
+                bottom: navBarEssentials.padding.bottom,
+              ),
               child: Stack(
                 children: <Widget>[
                   Transform.translate(
-                    offset: const Offset(0, -23),
+                    offset: const Offset(0, -21),
                     child: Center(
                       child: Container(
-                        width: 150,
+                        width: 105,
                         height: height,
                         margin: const EdgeInsets.only(top: 2),
                         decoration: BoxDecoration(
@@ -153,7 +153,8 @@ class _BottomNavStyle15 extends StatelessWidget {
                                       : item.inactiveColorPrimary))
                               : TextStyle(
                                   color: isSelected
-                                      ? (item.activeColorPrimary)
+                                      ? (item.activeColorSecondary ??
+                                          item.activeColorPrimary)
                                       : item.inactiveColorPrimary,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12),
