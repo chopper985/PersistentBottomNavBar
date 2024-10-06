@@ -21,7 +21,7 @@ class _BottomNavStyle15 extends StatelessWidget {
               height: height,
               color: Colors.transparent,
               padding: EdgeInsets.only(
-                top: 5,
+                top: navBarEssentials.padding.top,
                 bottom: navBarEssentials.padding.bottom,
               ),
               child: Container(
@@ -86,7 +86,6 @@ class _BottomNavStyle15 extends StatelessWidget {
           ? const SizedBox.shrink()
           : Padding(
               padding: EdgeInsets.only(
-                top: navBarEssentials.padding.top,
                 bottom: navBarEssentials.padding.bottom,
               ),
               child: Stack(
@@ -168,6 +167,7 @@ class _BottomNavStyle15 extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final midIndex = (navBarEssentials.items.length / 2).floor();
+
     return SizedBox(
       width: double.infinity,
       height: navBarEssentials.navBarHeight,
