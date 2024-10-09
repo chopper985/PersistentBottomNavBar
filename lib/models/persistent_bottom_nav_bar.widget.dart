@@ -100,7 +100,6 @@ class _PersistentBottomNavBar extends StatelessWidget {
                                   _PersistentBottomNavigationBarUtilFunctions
                                       .getNavBarDecoration(
                                 decoration: navBarDecoration,
-                                color: navBarEssentials.backgroundColor,
                                 opacity: navBarEssentials
                                     .items[navBarEssentials.selectedIndex]
                                     .opacity,

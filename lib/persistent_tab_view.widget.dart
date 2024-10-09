@@ -480,53 +480,6 @@ class _PersistentTabViewState extends State<PersistentTabView>
               },
             ),
           ),
-          if (_navBarHeight == 0)
-            const SizedBox.shrink()
-          else
-            Positioned(
-              bottom: (_navBarHeight - (widget.bottomScreenMargin ?? 0)).abs(),
-              child: GestureDetector(
-                onTap: () {
-                  if (widget
-                          .items[(widget.items.length / 2).floor()].onPressed !=
-                      null) {
-                    widget.items[(widget.items.length / 2).floor()]
-                        .onPressed!(_contextList[_controller.index]);
-                  } else {
-                    _controller.index = (widget.items.length / 2).floor();
-                  }
-                },
-                child: Center(
-                  child: Container(
-                    height: 21.0 +
-                        min(
-                            widget.navBarHeight,
-                            max(
-                                    widget.decoration.borderRadius?.topRight
-                                            .y ??
-                                        0,
-                                    widget.decoration.borderRadius?.topLeft.y ??
-                                        0) +
-                                (widget.decoration.border != null
-                                    ? widget.decoration.border?.dimensions
-                                            .vertical ??
-                                        0
-                                    : 0.0)),
-                    margin: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 2 -
-                            (MediaQuery.of(context).size.width / 5.0 - 30.0) /
-                                2),
-                    width: MediaQuery.of(context).size.width / 5.0 - 30.0,
-                    decoration: const BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(100),
-                          topRight: Radius.circular(100),
-                        )),
-                  ),
-                ),
-              ),
-            ),
         ],
       );
     } else if (widget.navBarStyle == NavBarStyle.style16) {
